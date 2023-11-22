@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F33AA14-2121-464D-86D7-C1FAC578357A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Recon_api_service</RootNamespace>
+    <AssemblyName>Recon_api_service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcMaster_service.cs" />
+    <Compile Include="ApplyRule_service.cs" />
+    <Compile Include="Dashboard_Service.cs" />
+    <Compile Include="Dedup_service.cs" />
+    <Compile Include="FileConvTemp_service.cs" />
+    <Compile Include="FileImport_service.cs" />
+    <Compile Include="LogHelper.cs" />
+    <Compile Include="login_serivce.cs" />
+    <Compile Include="ManualMatchOff_service.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qcdservices.cs" />
+    <Compile Include="Reconsetup_service.cs" />
+    <Compile Include="Report_Service.cs" />
+    <Compile Include="Rule_service.cs" />
+    <Compile Include="Setup_service.cs" />
+    <Compile Include="SystemMatchOff_service.cs" />
+    <Compile Include="Transfieldmap_service.cs" />
+    <Compile Include="User_Service.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Recon_api_datamodel\Recon_api_datamodel.csproj">
+      <Project>{a14b74a2-abed-43d8-b4fc-4826df7484ef}</Project>
+      <Name>Recon_api_datamodel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Recon_api_model\Recon_api_model.csproj">
+      <Project>{c00dab0d-42d9-437b-8695-16705562322c}</Project>
+      <Name>Recon_api_model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

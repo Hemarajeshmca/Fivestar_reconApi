@@ -29,6 +29,7 @@ namespace Recon_api_model
         public string tran_desc { get; set; }
         public string amount { get; set; }
         public string mult { get; set; }
+        public string active_status { get; set; }
         public string acc_mode { get; set; }
         public string ref_col1 { get; set; }
         public string ref_col2 { get; set; }
@@ -62,7 +63,7 @@ namespace Recon_api_model
         public string ref_col30 { get; set; }
         public string ref_col31 { get; set; }
         public string ref_col32 { get; set; }
-
+        
         public Boolean balance_flag { get; set; }
         public string bal_amount { get; set; }
         public string bal_amount_signed { get; set; }

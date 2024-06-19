@@ -471,6 +471,24 @@ namespace Recon_api.Controllers
             return response;
         }
 
+        //Reportpercentage_new
+
+        [Route("Reportpercentage_new")]
+        [HttpPost]
+        public DataSet Reportpercentage_new(Report_model ObjRpt_Model)
+        {
+            DataSet response = new DataSet();
+            try
+            {
+                response = Report_Service.Reportpercentage_new(ObjRpt_Model);
+            }
+            catch (Exception e)
+            {
+
+            }
+            return response;
+        }
+
         [Route("ReportKnocoffMIS")]
         [HttpPost]
         public DataSet ReportKnocoffMIS(Report_model ObjRpt_Model)

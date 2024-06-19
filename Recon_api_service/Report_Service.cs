@@ -539,6 +539,21 @@ namespace Recon_api_service
             return ds;
         }
 
+        public static DataSet Reportpercentage_new(Report_model objmodel)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                Report_datamodel objproduct = new Report_datamodel();
+                ds = objproduct.Reportpercentage_new(objmodel);
+            }
+            catch (Exception e)
+            {
+
+            }
+            return ds;
+        }
+
         public static DataSet ReportKnocoffMIS(Report_model objmodel)
         {
             DataSet ds = new DataSet();

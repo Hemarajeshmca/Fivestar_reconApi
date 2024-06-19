@@ -87,6 +87,10 @@ namespace Recon_api_datamodel
                 Dictionary<string, Object> values = new Dictionary<string, object>();
                 MSQLCON con = new MSQLCON(Applyrule.ip_address, Applyrule.user_code);
 
+                if (Applyrule.period_to == "")
+                {
+                    Applyrule.period_to = null;
+                }
 
                 values.Add("in_applyrule_gid", Applyrule.slno);
                 values.Add("in_recon_gid", Applyrule.ReconName_id);
@@ -148,7 +152,10 @@ namespace Recon_api_datamodel
                 Dictionary<string, Object> values = new Dictionary<string, object>();
                 MSQLCON con = new MSQLCON(Applyrule.ip_address, Applyrule.user_code);
 
-
+                if (Applyrule.period_to == "")
+                {
+                    Applyrule.period_to = null;
+                }
                 values.Add("in_applyrule_gid", Applyrule.slno);
                 values.Add("in_recon_gid", Applyrule.ReconName_id);
                 values.Add("in_recon_type", Applyrule.Recontype);

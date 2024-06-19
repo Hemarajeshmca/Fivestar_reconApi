@@ -396,7 +396,7 @@ namespace Recon_api_datamodel
                 Dictionary<string, Object> values = new Dictionary<string, object>();
                 MSQLCON con = new MSQLCON(ObjModel.ip_address, ObjModel.user_code);
                 values.Add("in_recon_gid", ObjModel.recon_gid);
-                values.Add("in_active_status", "");
+                values.Add("in_active_status", ObjModel.active_status);
                 result = con.RunDataSetProc("pr_get_recon", values);
                 return result;
             }
@@ -854,6 +854,33 @@ namespace Recon_api_datamodel
                 return result;
             }
         }
+
+
+        public DataSet Reportpercentage_new(Report_model objmodel)
+        {
+            DataSet result = new DataSet();
+            try
+            {
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MSQLCON con = new MSQLCON(objmodel.ip_address, objmodel.user_code);
+                values.Add("in_recon_gid", objmodel.Recon_gid);
+                values.Add("in_no_recons", objmodel.no_of_recons);
+                values.Add("in_tran_from", objmodel.fromdate);
+                values.Add("in_tran_to", objmodel.todate);
+                result = con.RunDataSetProcDash("pr_get_knockmis_count", values);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                string method_name = (new StackTrace()).GetFrame(0).GetMethod().Name;
+                string source_name = this.GetType().ToString();
+                string error = ex.ToString();
+                MSQLCON con = new MSQLCON(objmodel.ip_address, objmodel.user_code);
+                con.errorlog(objmodel.ip_address, objmodel.user_code, method_name, error, source_name);
+                return result;
+            }
+        }
+
 
         //public DataSet ReportKnocoffMIS(Report_model objmodel)
         //{

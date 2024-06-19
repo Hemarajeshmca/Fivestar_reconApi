@@ -30,7 +30,8 @@ namespace Recon_api.Controllers
             }
             return response;
         }
-        [Route("ReconNameList")]
+        
+         [Route("ReconNameList")]
         [HttpPost]
         public DataTable ReconNameLists(FileImport_model objmodel)
         {
@@ -372,7 +373,25 @@ namespace Recon_api.Controllers
             }
             return response;
         }
-    
-    }
+
+
+        [Route("FileTemplateList_fromtype")]
+        [HttpPost]
+        public DataTable getfiletemplatefromtype(FileImport_model objmodel)
+        {
+            DataTable response = new DataTable();
+            try
+            {
+                response = FileImport_service.FileTemplatefromtype(objmodel);
+            }
+            catch (Exception e)
+            {
+
+            }
+            return response;
+        }
+        
+
+     }
 
 }

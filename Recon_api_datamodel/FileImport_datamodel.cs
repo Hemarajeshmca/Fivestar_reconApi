@@ -12,6 +12,8 @@ namespace Recon_api_datamodel
 {
     public class FileImport_datamodel
     {
+
+        //FileTemplatefromtype
         public DataTable FileImportList(FileImport_model objmodel)
         {
             DataTable result = new DataTable();
@@ -729,5 +731,24 @@ namespace Recon_api_datamodel
                 return result;
             }
         }
+
+        public DataTable FileTemplatefromtype(FileImport_model objmodel)
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                Dictionary<string, Object> values = new Dictionary<string, object>();
+                MSQLCON con = new MSQLCON(objmodel.ip_address, objmodel.user_code);
+                values.Add("in_file_type", objmodel.FileType);
+                values.Add("in_active_status", objmodel.active_status);
+                result = con.RunDataSetProc("pr_get_filetemplate_fromtype", values);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return result;
+            }
+        }
+
     }
 }

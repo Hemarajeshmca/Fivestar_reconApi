@@ -79,8 +79,8 @@ namespace Recon_api_model
         public string recontallied { get; set; }
         public string recondaily_gid { get; set; }
         public int no_of_recons { get; set; }
-
-       
+        public string fromdate { get; set; }
+        public string todate { get; set; }
        
     }
 }

@@ -12,6 +12,7 @@ namespace Recon_api_service
 {
     public class FileImport_service
     {
+
         public static DataTable FileTemplateList(FileImport_model objmodel)
         {
             DataTable ds = new DataTable();
@@ -423,5 +424,21 @@ namespace Recon_api_service
                 return result;
             }
         }
+
+        public static DataTable FileTemplatefromtype(FileImport_model objmodel)
+        {
+            DataTable ds = new DataTable();
+            try
+            {
+                FileImport_datamodel objproduct = new FileImport_datamodel();
+                ds = objproduct.FileTemplatefromtype(objmodel);
+            }
+            catch (Exception e)
+            {
+
+            }
+            return ds;
+        }
+    
     }
 }
